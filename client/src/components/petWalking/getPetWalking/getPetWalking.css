@@ -1,0 +1,613 @@
+/* Contenedor principal con padding y estilo moderno */
+.pet-walking-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 1400px; /* Más ancho para acomodar más columnas */
+}
+
+/* Estilo para el título principal */
+.page-title {
+  color: #1abc9c; /* Verde azulado para temática de paseos */
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Barra de herramientas con filtros */
+.toolbar {
+  background-color: white;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+/* Contenedor de la tabla con scrollbar */
+.pet-walking-table-container {
+  max-height: 500px; /* Altura mayor para paseos */
+  overflow-y: auto; /* Scroll vertical */
+  overflow-x: auto; /* Scroll horizontal para tablas anchas */
+  margin-top: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background-color: white;
+}
+
+/* Estilos para la tabla de paseos */
+.pet-walking-table {
+  width: auto; /* Permite que la tabla se expanda según el contenido */
+  min-width: 100%; /* Asegura que ocupe al menos el 100% del contenedor */
+  margin-bottom: 0;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Sobrescribimos estilos de Bootstrap para la tabla */
+.pet-walking-table th,
+.pet-walking-table td {
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+  min-width: 100px;
+  white-space: normal;
+}
+
+/* Anchos específicos para columnas que necesitan más espacio */
+.pet-walking-table th:nth-child(1), /* # */
+.pet-walking-table td:nth-child(1) {
+  min-width: 50px;
+  text-align: center;
+}
+
+.pet-walking-table th:nth-child(2), /* Fecha */
+.pet-walking-table td:nth-child(2) {
+  min-width: 140px;
+}
+
+.pet-walking-table th:nth-child(3), /* Horario */
+.pet-walking-table td:nth-child(3) {
+  min-width: 120px;
+}
+
+.pet-walking-table th:nth-child(4), /* Duración */
+.pet-walking-table td:nth-child(4) {
+  min-width: 100px;
+  text-align: center;
+}
+
+.pet-walking-table th:nth-child(5), /* Mascota */
+.pet-walking-table td:nth-child(5) {
+  min-width: 150px;
+}
+
+.pet-walking-table th:nth-child(6), /* Paseador */
+.pet-walking-table td:nth-child(6) {
+  min-width: 150px;
+}
+
+.pet-walking-table th:nth-child(7), /* Estado */
+.pet-walking-table td:nth-child(7) {
+  min-width: 120px;
+  text-align: center;
+}
+
+.pet-walking-table th:nth-child(8), /* Novedades */
+.pet-walking-table td:nth-child(8),
+.pet-walking-table th:nth-child(9), /* Notas Admin */
+.pet-walking-table td:nth-child(9) {
+  min-width: 150px;
+}
+
+.pet-walking-table th:nth-child(10), /* Acciones */
+.pet-walking-table td:nth-child(10) {
+  min-width: 120px;
+  text-align: center;
+}
+
+/* Encabezados de tabla con tema de paseos */
+.pet-walking-table thead th {
+  background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+  color: white;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border: none;
+}
+
+.pet-walking-table td {
+  border: 1px solid #dee2e6;
+}
+
+/* Hover effects para filas de tabla */
+.pet-walking-table tbody tr:hover {
+  background-color: #e8f8f5; /* Verde muy claro para hover */
+  transition: background-color 0.2s ease;
+}
+
+/* Estilos para el badge de estado */
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Colores específicos para cada estado */
+.badge.bg-primary {
+  background-color: #3498db !important;
+}
+
+.badge.bg-warning {
+  background-color: #f39c12 !important;
+  color: white !important;
+}
+
+.badge.bg-success {
+  background-color: #27ae60 !important;
+}
+
+.badge.bg-danger {
+  background-color: #e74c3c !important;
+}
+
+.badge.bg-info {
+  background-color: #00bcd4 !important;
+}
+
+.badge.bg-secondary {
+  background-color: #95a5a6 !important;
+}
+
+/* Botón "Programar Paseo" con estilo mejorado */
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #16a085 0%, #138a72 100%);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Botones de acción pequeños */
+.btn-sm {
+  padding: 4px 8px;
+  font-size: 12px;
+  margin: 2px;
+  border-radius: 3px;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-info {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+.btn-warning {
+  background-color: #f39c12;
+  color: white;
+}
+
+.btn-warning:hover {
+  background-color: #e67e22;
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+.btn-outline-secondary {
+  background-color: transparent;
+  color: #95a5a6;
+  border: 1px solid #95a5a6;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #95a5a6;
+  color: white;
+}
+
+/* Estilos para filtros */
+.form-select-sm {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background-color: white;
+  transition: border-color 0.2s ease;
+}
+
+.form-select-sm:focus {
+  border-color: #1abc9c;
+  box-shadow: 0 0 0 0.2rem rgba(26, 188, 156, 0.25);
+  outline: none;
+}
+
+.form-control-sm {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  transition: border-color 0.2s ease;
+}
+
+.form-control-sm:focus {
+  border-color: #1abc9c;
+  box-shadow: 0 0 0 0.2rem rgba(26, 188, 156, 0.25);
+  outline: none;
+}
+
+/* Modal personalizado */
+.modal-header {
+  background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+  color: white;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.modal-header .btn-close {
+  color: white;
+  opacity: 0.8;
+}
+
+.modal-header .btn-close:hover {
+  opacity: 1;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+  padding: 15px;
+}
+
+/* Iconos en la tabla */
+.fas {
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+.text-primary {
+  color: #3498db !important;
+}
+
+.text-success {
+  color: #27ae60 !important;
+}
+
+.text-muted {
+  color: #95a5a6 !important;
+  font-size: 12px;
+}
+
+/* Spinner de carga */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.3em;
+}
+
+/* Alerta de error */
+.alert-danger {
+  background-color: #ffe5e5;
+  border: 1px solid #ffcccc;
+  color: #e74c3c;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+/* ===== ESTILOS DE PAGINACIÓN SÚPER COMPACTA ===== */
+/* Paginación personalizada con estilo súper compacto */
+.pagination {
+  margin: 3px 0 0 0 !important;
+  padding: 0 !important;
+  justify-content: center;
+}
+
+/* Clase específica para paginación compacta */
+.pagination-compact {
+  margin: 3px 0 0 0 !important;
+  padding: 0 !important;
+}
+
+.pagination-compact .page-link {
+  padding: 0.25rem 0.5rem !important;
+  margin: 0 !important;
+  font-size: 0.75rem !important;
+  color: #1abc9c;
+  border: 1px solid #dee2e6;
+  background-color: white;
+  transition: all 0.2s ease;
+  line-height: 1.2 !important;
+  min-height: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-compact .page-item {
+  margin: 0 !important;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pagination-compact .page-link:hover {
+  background-color: #e8f8f5;
+  color: #16a085;
+  border-color: #1abc9c;
+}
+
+.pagination-compact .page-item.active .page-link {
+  background-color: #1abc9c !important;
+  border-color: #1abc9c !important;
+  color: white !important;
+  z-index: 3;
+}
+
+.pagination-compact .page-item.disabled .page-link {
+  color: #95a5a6;
+  cursor: not-allowed;
+  opacity: 0.5;
+  background-color: white;
+}
+
+/* Eliminar espaciado entre elementos de paginación */
+.pagination-compact .page-item:not(:first-child) .page-link {
+  border-left: 0;
+  margin-left: -1px;
+}
+
+/* Asegurar que la paginación no tenga margen extra */
+.pet-walking-table-container .pagination {
+  margin: 3px 0 0 0 !important;
+  padding: 0 !important;
+}
+
+/* Hacer la paginación más compacta globalmente */
+.pagination .page-link {
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.75rem !important;
+  line-height: 1.2 !important;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination .page-item {
+  margin: 0 !important;
+  height: 28px;
+}
+
+/* Estilo adicional para hacer la paginación súper compacta */
+.pet-walking-table-container + .pagination-compact {
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+  .pet-walking-container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .toolbar {
+    padding: 10px;
+  }
+
+  .toolbar .d-flex {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pet-walking-table th,
+  .pet-walking-table td {
+    padding: 8px;
+    font-size: 13px;
+    min-width: 80px;
+  }
+
+  .pet-walking-table-container {
+    max-height: 400px;
+  }
+
+  .btn-primary {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .btn-sm {
+    padding: 3px 6px;
+    font-size: 11px;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .status-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .form-select-sm,
+  .form-control-sm {
+    font-size: 13px;
+    width: 100%;
+  }
+
+  /* Paginación responsive más compacta */
+  .pagination-compact .page-link {
+    padding: 0.2rem 0.4rem !important;
+    font-size: 0.7rem !important;
+    height: 24px !important;
+    min-height: 24px !important;
+  }
+
+  .pagination-compact .page-item {
+    height: 24px !important;
+  }
+}
+
+/* Estilo para el scrollbar en navegadores webkit */
+.pet-walking-table-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.pet-walking-table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.pet-walking-table-container::-webkit-scrollbar-thumb {
+  background: #1abc9c;
+  border-radius: 4px;
+}
+
+.pet-walking-table-container::-webkit-scrollbar-thumb:hover {
+  background: #16a085;
+}
+
+.pet-walking-table-container::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+}
+
+/* Animación de carga suave */
+.pet-walking-container .text-center {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Estado vacío */
+.text-center.py-5 {
+  padding: 60px 20px;
+}
+
+.text-center .fa-walking {
+  color: #1abc9c;
+  opacity: 0.3;
+}
+
+.btn-outline-primary {
+  color: #1abc9c;
+  border: 2px solid #1abc9c;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #1abc9c;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Contador de registros */
+.badge.px-3.py-2 {
+  background-color: #95a5a6 !important;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Mejoras visuales para la información de mascota y paseador */
+.fw-bold {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.small {
+  font-size: 11px;
+}
+
+/* Truncado de texto */
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Tooltips en hover */
+[title] {
+  cursor: help;
+}
+
+/* Flexbox para botones de acción */
+.d-flex.flex-column.gap-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Mejora visual para celdas vacías */
+.pet-walking-table td .text-muted {
+  font-style: italic;
+}
+
+/* Estilo para fecha formateada */
+.pet-walking-table td div {
+  line-height: 1.4;
+}

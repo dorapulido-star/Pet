@@ -1,0 +1,403 @@
+/* Contenedor principal con padding y estilo moderno */
+.pet-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 1200px; /* Limita el ancho máximo para pantallas grandes */
+}
+
+/* Estilo para el título principal */
+.pet-container h2 {
+  color: #6c5ce7;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Contenedor de la tabla con scrollbar */
+.pet-table-container {
+  max-height: 400px; /* Altura máxima antes de mostrar el scrollbar */
+  overflow-y: auto; /* Scroll vertical */
+  overflow-x: auto; /* Scroll horizontal para tablas anchas */
+  margin-top: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+/* Estilos para la tabla de perros */
+.pet-table {
+  width: auto; /* Permite que la tabla se expanda según el contenido */
+  min-width: 100%; /* Asegura que ocupe al menos el 100% del contenedor */
+  margin-bottom: 0; /* Elimina margen inferior para evitar espacio no deseado */
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden; /* Para que los bordes redondeados se vean bien */
+  white-space: nowrap; /* Evita que el contenido de las celdas se rompa */
+}
+
+/* Sobrescribimos estilos de Bootstrap para la tabla */
+.pet-table th,
+.pet-table td {
+  padding: 12px; /* Más espacio interno */
+  text-align: left;
+  vertical-align: middle; /* Alineación vertical centrada */
+  min-width: 120px; /* Ancho mínimo para cada celda */
+  white-space: normal; /* Permite que el texto se ajuste dentro de cada celda */
+}
+
+/* Anchos específicos para columnas que necesitan más espacio */
+.pet-table th:nth-child(7), /* Propietario */
+.pet-table td:nth-child(7) {
+  min-width: 200px;
+}
+
+.pet-table th:nth-child(8), /* Foto */
+.pet-table td:nth-child(8) {
+  min-width: 100px;
+}
+
+.pet-table th:nth-child(9), /* Recomendaciones */
+.pet-table td:nth-child(9) {
+  min-width: 200px;
+}
+
+.pet-table th:nth-child(11), /* Acciones */
+.pet-table td:nth-child(11) {
+  min-width: 150px;
+}
+
+/* Encabezados de tabla con tema de mascotas */
+.pet-table th {
+  background-color: #6c5ce7; /* Púrpura elegante para temática de mascotas */
+  color: white;
+  font-weight: 600;
+  position: sticky; /* Mantiene los encabezados visibles */
+  top: 0; /* Fija los encabezados en la parte superior */
+  z-index: 10; /* Asegura que los encabezados estén por encima del contenido */
+}
+
+.pet-table td {
+  border: 1px solid #dee2e6; /* Borde consistente con Bootstrap */
+}
+
+/* Hover effects para filas de tabla */
+.pet-table tbody tr:hover {
+  background-color: #f5f3ff; /* Púrpura muy claro para hover */
+  transition: background-color 0.2s ease;
+}
+
+/* Botón "Añadir Perro" con estilo mejorado */
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00b894; /* Verde menta para temática de mascotas */
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background-color: #00cec9; /* Verde más brillante para hover */
+  color: white;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Botones de acción (Editar/Eliminar) con estilo mejorado */
+.btn-warning,
+.btn-danger {
+  padding: 6px 12px;
+  margin: 0 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: opacity 0.3s ease, transform 0.1s ease;
+  white-space: nowrap; /* Evita que los botones se rompan */
+}
+
+.btn-warning {
+  background-color: #fdcb6e; /* Amarillo dorado para el botón de editar */
+  color: #2d3436;
+  border-color: #fdcb6e;
+}
+
+.btn-danger {
+  background-color: #ff7675; /* Rojo suave para el botón de eliminar */
+  color: white;
+  border-color: #ff7675;
+}
+
+.btn-warning:hover,
+.btn-danger:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-warning:active,
+.btn-danger:active {
+  transform: translateY(0);
+}
+
+/* Estilo especial para botón deshabilitado */
+.btn-warning:disabled,
+.btn-danger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Estilos para badges */
+.badge {
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-info {
+  background-color: #74b9ff;
+}
+
+.badge-success {
+  background-color: #00b894;
+}
+
+.badge-warning {
+  background-color: #fdcb6e;
+}
+
+.badge-danger {
+  background-color: #ff7675;
+}
+
+/* Estilos para imágenes en la tabla */
+.pet-table img {
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* ===== ESTILOS DE PAGINACIÓN SÚPER COMPACTA ===== */
+/* Paginación personalizada con estilo súper compacto */
+.pagination {
+  margin: 3px 0 0 0 !important;
+  padding: 0 !important;
+  justify-content: center;
+}
+
+/* Clase específica para paginación compacta */
+.pagination-compact {
+  margin: 3px 0 0 0 !important;
+  padding: 0 !important;
+}
+
+.pagination-compact .page-link {
+  padding: 0.25rem 0.5rem !important;
+  margin: 0 !important;
+  font-size: 0.75rem !important;
+  color: #6c5ce7;
+  border: 1px solid #dee2e6;
+  background-color: white;
+  transition: all 0.2s ease;
+  line-height: 1.2 !important;
+  min-height: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-compact .page-item {
+  margin: 0 !important;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pagination-compact .page-link:hover {
+  background-color: #f5f3ff;
+  color: #5a4fcf;
+  border-color: #6c5ce7;
+}
+
+.pagination-compact .page-item.active .page-link {
+  background-color: #6c5ce7 !important;
+  border-color: #6c5ce7 !important;
+  color: white !important;
+  z-index: 3;
+}
+
+.pagination-compact .page-item.disabled .page-link {
+  color: #95a5a6;
+  cursor: not-allowed;
+  opacity: 0.5;
+  background-color: white;
+}
+
+/* Eliminar espaciado entre elementos de paginación */
+.pagination-compact .page-item:not(:first-child) .page-link {
+  border-left: 0;
+  margin-left: -1px;
+}
+
+/* Asegurar que la paginación no tenga margen extra */
+.pet-table-container .pagination {
+  margin: 3px 0 0 0 !important;
+  padding: 0 !important;
+}
+
+/* Hacer la paginación más compacta globalmente */
+.pagination .page-link {
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.75rem !important;
+  line-height: 1.2 !important;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c5ce7;
+}
+
+.pagination .page-item {
+  margin: 0 !important;
+  height: 28px;
+}
+
+.pagination .page-link:hover {
+  background-color: #f5f3ff;
+  color: #5a4fcf;
+  border-color: #6c5ce7;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #6c5ce7;
+  border-color: #6c5ce7;
+  color: white;
+}
+
+/* Estilo adicional para hacer la paginación súper compacta */
+.pet-table-container + .pagination-compact {
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+  .pet-container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .pet-table th,
+  .pet-table td {
+    padding: 8px;
+    font-size: 14px;
+    min-width: 100px; /* Reduce el ancho mínimo en móviles */
+  }
+
+  /* Ajusta anchos específicos para móviles */
+  .pet-table th:nth-child(7),
+  .pet-table td:nth-child(7),
+  .pet-table th:nth-child(9),
+  .pet-table td:nth-child(9) {
+    min-width: 150px;
+  }
+
+  .btn-primary {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .btn-warning,
+  .btn-danger {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .pet-table-container {
+    max-height: 300px; /* Reduce la altura en pantallas pequeñas */
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  /* Paginación responsive más compacta */
+  .pagination-compact .page-link {
+    padding: 0.2rem 0.4rem !important;
+    font-size: 0.7rem !important;
+    height: 24px !important;
+    min-height: 24px !important;
+  }
+
+  .pagination-compact .page-item {
+    height: 24px !important;
+  }
+
+  .pagination .page-link {
+    padding: 0.2rem 0.4rem !important;
+    font-size: 0.7rem !important;
+    height: 24px !important;
+  }
+
+  .pagination .page-item {
+    height: 24px !important;
+  }
+}
+
+/* Estilo para el scrollbar en navegadores webkit */
+.pet-table-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; /* Altura para el scrollbar horizontal */
+}
+
+.pet-table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.pet-table-container::-webkit-scrollbar-thumb {
+  background: #a29bfe; /* Color púrpura claro acorde con el tema */
+  border-radius: 4px;
+}
+
+.pet-table-container::-webkit-scrollbar-thumb:hover {
+  background: #6c5ce7; /* Púrpura más oscuro al hover */
+}
+
+/* Estilo para la esquina donde se encuentran los scrollbars */
+.pet-table-container::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+}
+
+/* Mensajes de carga y error */
+.text-center {
+  font-size: 16px;
+  color: #333;
+}
+
+.alert-danger {
+  font-size: 16px;
+  color: #ff7675; /* Rojo suave para errores, consistente con el tema */
+}
+
+/* Animación de carga suave */
+.pet-container .text-center {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
